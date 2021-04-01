@@ -1,0 +1,60 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+nav .brand {
+}
+
+nav ol {
+  display: flex;
+  gap: 10px;
+}
+
+nav ol a {
+  padding: 0.5rem 1.2rem;
+  text-decoration: none !important;
+  color: #434343;
+  border-radius: 5px;
+}
+
+nav ol a:hover {
+  background-color: #469bfe;
+  color: #fff;
+}
+
+.active {
+  background-color: #469bfe;
+  color: #fff;
+}
+
+/* Profile Card*/
+.profileCard {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.profileCard:hover {
+  background-color: white;
+}
+
+.profileCard a {
+  font-size: 16px;
+  padding-left: 0;
+}
+
+.profileCard a:hover {
+  font-size: 16px;
+  background-color: transparent;
+}
+.profilePhoto {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}

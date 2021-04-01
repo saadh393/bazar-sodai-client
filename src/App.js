@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+// 🔥 Dependencis 🔥
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import HomePage from "./Pages/HomePage";
+import OrderPage from "./Pages/OrderPage";
+import AdminPage from "./Pages/AdminPage";
+import LoginPage from "./Pages/LoginPage";
+import Navbar from "./Components/Navbar/Navbar";
+import CheckoutPage from "./Pages/CheckoutPage";
+import { createContext, useState } from "react";
+
+export const UserContext = createContext({});
 
 function App() {
+  const [user, setUser] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UserContext.Provider value={[user, setUser]}>
+        <Router>
+          <Switch>
+            <Container>
+              <Route exact path="/">
+                <Navbar />
+                <HomePage />
+              </Route>
+
+              <Route path="/orders">
+                <Navbar />
+                <OrderPage />
+              </Route>
+
+              <Route path="/login">
+                <Navbar />
+                <LoginPage />
+              </Route>
+
+              <Route path="/checkout/:_id">
+                <Navbar />
+                <CheckoutPage />
+              </Route>
+            </Container>
+          </Switch>
+
+          <Switch>
+            <Route path="/admin">
+              <AdminPage />
+            </Route>
+          </Switch>
+        </Router>
+      </UserContext.Provider>
+    </>
   );
 }
 

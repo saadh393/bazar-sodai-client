@@ -1,0 +1,23 @@
+.googleBtn {
+  display: flex;
+  border: 1px solid rgba(128, 128, 128, 0.425);
+  width: 300px;
+  margin: 20px auto;
+  padding: 5px 15px;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.googleBtn img {
+  width: 32px;
+}
+.googleBtn p {
+  margin: 0;
+}
+.googleBtn:hover {
+  background-color: rgb(231, 231, 231);
+}

@@ -1,38 +1,92 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300&display=swap");
+
+/* Global Styles */
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #f6f7f8;
+}
+a {
+  text-decoration: none;
+}
+h3 {
+  color: #363958 !important;
+  font-weight: 700;
+}
+
+/* Admin Page Styles */
+.adminPage {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 250px auto;
+  /* overflow: hidden; */
+}
+
+.adminPage .sidebar {
+  background: #231931;
+  color: #fff;
   text-align: center;
+  overflow: hidden;
+}
+.adminPage .sidebar a {
+  text-decoration: none;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.adminPage .sidebar .branding {
+  margin-top: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.adminPage .sidebar .branding img {
+  width: 80%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.adminPage .sidebar ul {
+  margin-top: 2.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 5px;
+}
+.adminPage .sidebar ul a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 2.5;
+  width: 100%;
+  font-weight: 500;
+}
+
+.adminPage .sidebar ul a:hover {
+  background-color: royalblue;
+}
+
+.adminPage .mainContents {
+}
+
+.adminPage .mainContents .mainContentHeader {
+  background-color: rgba(21, 20, 105, 0.021);
+  display: flex;
+  gap: 20px;
+  padding: 1.5rem;
+}
+
+.adminPage .mainContents .contents {
+  padding: 2rem;
+}
+
+/* Home Page Styles */
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Login Page Styles */
+.loginPage {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginPage img {
+  width: 50%;
 }
