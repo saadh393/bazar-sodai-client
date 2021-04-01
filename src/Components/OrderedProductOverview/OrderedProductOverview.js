@@ -11,16 +11,33 @@ import { useContext, useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { UserContext } from "../../App";
 import "./OrderedProductOverview.css";
+import loadingGif from "../../Images/loading.gif";
 
 const OrderedProductOverview = () => {
   const [user, setUser] = useContext(UserContext);
-  const [orderedProduct, setOrderedProduct] = useState([]);
+  const [orderedProduct, setOrderedProduct] = useState([
+    {
+      productImage: loadingGif,
+      productName: "Loading...",
+      productPrice: "",
+      productQuantity: "",
+      timestamp: "",
+    },
+  ]);
   useEffect(() => {
     axios.get("https://apple-pie-18190.herokuapp.com/orderedItems/" + user.email).then(({ data }) => {
       if (data.ordered?.length > 0) {
         setOrderedProduct(data.ordered);
       } else {
-        setOrderedProduct([]);
+        setOrderedProduct([
+          {
+            productImage: loadingGif,
+            productName: "You Haven't Purchased Anything Yet",
+            productPrice: "",
+            productQuantity: "",
+            timestamp: "",
+          },
+        ]);
       }
     });
   }, []);

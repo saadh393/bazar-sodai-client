@@ -25,7 +25,7 @@ const AdminMainContent = () => {
             <FontAwesomeIcon icon={faChevronLeft} />
             {" Back "}
           </Button>
-          <h2> Page Name </h2>
+          <h2> Admin Panel </h2>
         </div>
         <div className="contents">
           <Switch>
