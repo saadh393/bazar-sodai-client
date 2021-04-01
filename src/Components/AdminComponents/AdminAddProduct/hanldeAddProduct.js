@@ -17,7 +17,7 @@ export const addProduct = (data, e) => {
           productPrice: data.productPrice.startsWith("$") ? data.productPrice : "$" + data.productPrice.startsWith("$"),
         };
         return axios
-          .post("http://localhost:4000/addProduct", eventDataObject)
+          .post("https://apple-pie-18190.herokuapp.com/addProduct", eventDataObject)
           .then((success) => {
             e.target.reset();
             return true;

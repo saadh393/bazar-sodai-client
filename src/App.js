@@ -11,6 +11,7 @@ import LoginPage from "./Pages/LoginPage";
 import Navbar from "./Components/Navbar/Navbar";
 import CheckoutPage from "./Pages/CheckoutPage";
 import { createContext, useState } from "react";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext({});
 
@@ -27,27 +28,27 @@ function App() {
                 <HomePage />
               </Route>
 
-              <Route path="/orders">
+              <PrivateRoute path="/orders">
                 <Navbar />
                 <OrderPage />
-              </Route>
+              </PrivateRoute>
 
               <Route path="/login">
                 <Navbar />
                 <LoginPage />
               </Route>
 
-              <Route path="/checkout/:_id">
+              <PrivateRoute path="/checkout/:_id">
                 <Navbar />
                 <CheckoutPage />
-              </Route>
+              </PrivateRoute>
             </Container>
           </Switch>
 
           <Switch>
-            <Route path="/admin">
+            <PrivateRoute path="/admin">
               <AdminPage />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Router>
       </UserContext.Provider>

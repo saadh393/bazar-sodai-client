@@ -9,17 +9,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SingleProductCard from "../Components/SingleProductCard/SingleProductCard";
+import Searchbar from "../Components/Searchbar/Searchbar";
+import { Spinner } from "react-bootstrap";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4000/products").then((pd) => setProducts(pd.data));
+    axios.get("https://apple-pie-18190.herokuapp.com/products").then((pd) => setProducts(pd.data));
   }, []);
 
   return (
     <>
+      <Searchbar />
       <div className="productGrid my-5">
-        {products.length && products.map((pd) => <SingleProductCard product={pd} key={pd._id} />)}
+        {products.length ? (
+          products.map((pd) => <SingleProductCard product={pd} key={pd._id} />)
+        ) : (
+          <div className="center">
+            <Spinner animation="grow" size="sm" variant="warning" />
+            <Spinner animation="grow" variant="danger" />
+          </div>
+        )}
       </div>
     </>
   );

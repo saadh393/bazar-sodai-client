@@ -22,7 +22,6 @@ const AdminSidebar = () => {
         <ul>
           <Link to="/admin/manage"> Manage Products</Link>
           <Link to="/admin/addProduct"> Add Products</Link>
-          <Link to="/admin/users"> User Data </Link>
         </ul>
       </div>
     </>

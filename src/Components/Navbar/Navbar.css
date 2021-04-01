@@ -5,7 +5,8 @@ nav {
   margin: 1rem 0;
 }
 
-nav .brand {
+nav .brand img {
+  width: 150px;
 }
 
 nav ol {
@@ -57,4 +58,17 @@ nav ol a:hover {
   width: 35px;
   height: 35px;
   border-radius: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  .menuList {
+    padding-left: 0;
+    margin-top: 5px;
+  }
+  .inputWidth {
+    width: 80%;
+  }
 }

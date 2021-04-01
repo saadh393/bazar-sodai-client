@@ -26,7 +26,7 @@ const AdminAddProduct = () => {
   return (
     <>
       <Card className="p-4 m-4">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} class="addProductForm">
           <Row>
             <Col>
               <div className="form-group">

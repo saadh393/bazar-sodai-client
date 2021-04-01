@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Navbar.css";
+import logo from "../../Images/logo.png";
 
 const Navbar = () => {
   const [user, setUser] = useContext(UserContext);
@@ -18,12 +19,14 @@ const Navbar = () => {
     <>
       <nav>
         <div className="brand">
-          <h1> Bazar Shodai </h1>
+          <Link to="/">
+            <img src={logo} />
+          </Link>
         </div>
         <ol className="menuList">
           <Link to="/">Home</Link>
           <Link to="/orders">Orders</Link>
-          <Link to="/admin">Admin</Link>
+          <Link to="/admin/addProduct">Admin</Link>
           {user.name ? <Profile name={user.name} photo={user.photo} /> : <LoginBtn />}
         </ol>
       </nav>

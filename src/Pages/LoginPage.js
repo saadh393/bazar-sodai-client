@@ -15,7 +15,7 @@ const LoginPage = () => {
     <>
       <Card className="align-items-center p-5">
         <h1 className="font-weight-bold"> Login Required </h1>
-        <img src={loginImage} className="w-25 my-5" />
+        <img src={loginImage} className="w-25 my-5 loginImage" />
         <SignInWithGoogle />
       </Card>
     </>

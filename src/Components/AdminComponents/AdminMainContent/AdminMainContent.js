@@ -12,6 +12,7 @@ import { Button } from "react-bootstrap";
 import AdminAddProduct from "../AdminAddProduct/AdminAddProduct";
 import { Route, Switch, useHistory } from "react-router-dom";
 import AdminManageProducts from "../AdminManageProducts/AdminManageProducts";
+import PrivateRoute from "../../PrivateRoute/PrivateRoute";
 
 const AdminMainContent = () => {
   const history = useHistory();
@@ -28,15 +29,15 @@ const AdminMainContent = () => {
         </div>
         <div className="contents">
           <Switch>
-            <Route path="/admin/addProduct">
+            <PrivateRoute path="/admin/addProduct">
               <AdminAddProduct />
-            </Route>
-            <Route path="/admin/manage">
+            </PrivateRoute>
+            <PrivateRoute path="/admin/manage">
               <AdminManageProducts />
-            </Route>
-            <Route path="/admin/users">
+            </PrivateRoute>
+            <PrivateRoute path="/admin/users">
               <AdminManageProducts />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </div>
       </div>

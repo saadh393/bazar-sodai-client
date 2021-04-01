@@ -12,21 +12,25 @@ import googleIcon from "../../Images/google.png";
 import { useContext } from "react";
 import { UserContext } from "../../App";
 import axios from "axios";
+import { useHistory, useLocation } from "react-router";
 
 const SignInWithGoogle = () => {
   const [user, setUser] = useContext(UserContext);
+  const location = useLocation();
+  const history = useHistory();
+  let { from } = location.state || { from: { pathname: "/" } };
 
   const handleSignin = () => {
     handleGoogleSignIn()
       .then(({ user: u }) => {
-        // setUser(res);
         const userDataObj = {
           name: u.displayName,
           email: u.email,
           photo: u.photoURL,
         };
         setUser(userDataObj);
-        axios.post("http://localhost:4000/addUser", userDataObj).then((res) => console.log(res));
+        axios.post("https://apple-pie-18190.herokuapp.com/addUser", userDataObj).then((res) => console.log(res));
+        history.replace(from);
       })
       .catch((exception) => console.log(exception));
   };

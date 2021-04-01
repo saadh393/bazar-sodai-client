@@ -26,7 +26,7 @@ const CheckoutPage = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:4000/product/" + _id).then(({ data }) => setCheckout(data));
+    axios.get("https://apple-pie-18190.herokuapp.com/product/" + _id).then(({ data }) => setCheckout(data));
   }, []);
 
   const { productName, productPrice, productQuantity } = checkout;
@@ -35,7 +35,7 @@ const CheckoutPage = () => {
     if (user.name) {
       const email = user.email;
       const datatoStore = { email, ...checkout };
-      axios.post("http://localhost:4000/placeOrder", datatoStore).then((response) => {
+      axios.post("https://apple-pie-18190.herokuapp.com/placeOrder", datatoStore).then((response) => {
         console.log("Place Order", response);
         if (response) {
           history.push("/orders?msg=true");

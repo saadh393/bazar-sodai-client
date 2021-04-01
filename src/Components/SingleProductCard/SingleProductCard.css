@@ -66,3 +66,45 @@
   background: rgb(84, 181, 254);
   background: linear-gradient(164deg, rgba(84, 181, 254, 1) 0%, rgba(70, 156, 255, 1) 100%);
 }
+
+@media only screen and (max-width: 600px) {
+  .singleProductCard {
+    width: 170px;
+  }
+  .singleProductCard .productImage {
+    height: 170px;
+  }
+  .singleProductCard .productInfo {
+    font-size: 0.8rem;
+    padding: 0 0.8rem;
+  }
+
+  .singleProductCard .productInfo h4 {
+    font-size: 0.9rem;
+    margin-top: 2px;
+  }
+
+  .singleProductCard .cardIcons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .singleProductCard .cardIcons a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .singleProductCard .cardIcons strong {
+    padding: 0;
+  }
+
+  .singleProductCard .priceTag {
+    width: 60px;
+    height: 27px;
+    top: -26%;
+    font-weight: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+}

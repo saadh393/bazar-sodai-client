@@ -16,13 +16,13 @@ import axios from "axios";
 const AdminManageProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4000/products").then(({ data }) => {
+    axios.get("https://apple-pie-18190.herokuapp.com/products").then(({ data }) => {
       setProducts(data);
     });
   }, []);
 
   const deleteItem = (id) => {
-    axios.delete("http://localhost:4000/productDelete/" + id).then(({ data }) => {
+    axios.delete("https://apple-pie-18190.herokuapp.com/productDelete/" + id).then(({ data }) => {
       if (data) {
         const restOftheData = products.filter((pd) => pd._id !== id);
         setProducts(restOftheData);

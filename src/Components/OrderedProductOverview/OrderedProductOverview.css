@@ -31,3 +31,15 @@
 .orderedProduct > p {
   text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+  .orderedProduct {
+    grid-template-columns: none;
+  }
+  .orderedProductInfo h5 {
+    font-size: 0.9rem;
+  }
+  .col-md-4 {
+    margin-top: 10px;
+  }
+}

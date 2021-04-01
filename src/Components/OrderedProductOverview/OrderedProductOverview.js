@@ -16,7 +16,7 @@ const OrderedProductOverview = () => {
   const [user, setUser] = useContext(UserContext);
   const [orderedProduct, setOrderedProduct] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4000/orderedItems/" + user.email).then(({ data }) => {
+    axios.get("https://apple-pie-18190.herokuapp.com/orderedItems/" + user.email).then(({ data }) => {
       if (data.ordered?.length > 0) {
         setOrderedProduct(data.ordered);
       } else {
