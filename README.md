@@ -9,6 +9,7 @@ Bazar Shodai is a simple ecommerce Site. After Login though your google account 
 📚 Implemented Firebase Authentication to perform user login or signup actions
 
 
+## General Info
 
 ⚡ Technologies : React, Node, Express, Mongo, Firebase Auth, React-Router, Axios
 
@@ -18,7 +19,7 @@ Bazar Shodai is a simple ecommerce Site. After Login though your google account 
 
 
 
-#### **Screenshort:**
+## **Screenshort:**
 
 [![Bazar Shodai Ecommerce](https://raw.githubusercontent.com/saadh393/bazar-sodai-client/main/screenshorts/1.jpeg "Bazar Shodai Ecommerce")](https://bazarshodai.netlify.app/ "Bazar Shodai Ecommerce")
 
