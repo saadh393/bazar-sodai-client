@@ -3,6 +3,7 @@
 /* Global Styles */
 * {
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 body {
   background-color: #f6f7f8;
@@ -111,8 +112,23 @@ h3 {
     grid-template-columns: auto;
   }
 
-  .branding img {
-    width: 40% !important;
+  .adminPage .sidebar .branding img {
+    width: 140px;
+    height: fit-content;
+  }
+
+  .adminPage .sidebar {
+    height: fit-content;
+  }
+
+  .adminPage .sidebar .branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .adminPage .sidebar .branding h2 {
+    display: none;
   }
 
   .adminPage .sidebar ul {
@@ -123,7 +139,7 @@ h3 {
   .adminPage .sidebar ul a {
     line-height: 1.2;
     width: auto;
-    padding: 5px 10px;
+    padding: 8px 13px;
   }
   .adminPage .mainContents .contents {
     padding: 1rem;
@@ -134,5 +150,9 @@ h3 {
 
   .addProductForm .row {
     display: block !important;
+  }
+
+  .productGrid {
+    justify-content: space-around;
   }
 }

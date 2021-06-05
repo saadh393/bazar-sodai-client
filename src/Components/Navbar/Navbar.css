@@ -60,15 +60,52 @@ nav ol a:hover {
   border-radius: 100%;
 }
 
+.hamburger {
+  width: 30px;
+  cursor: pointer;
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
-    flex-direction: column;
+    flex-direction: row;
+    padding: 0 1rem;
+  }
+  nav .brand img {
+    width: 100px;
   }
   .menuList {
     padding-left: 0;
     margin-top: 5px;
+    display: none;
   }
   .inputWidth {
     width: 80%;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .responsiveNavMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #469bfe;
+    box-shadow: 0px 5px 20px 0 rgb(0 0 0 / 30%);
+    padding: 0;
+    align-items: center;
+    padding-bottom: 20px;
+    transition: display 0.5s ease;
+  }
+
+  .responsiveNavMenu a {
+    width: 100%;
+    text-align: center;
   }
 }

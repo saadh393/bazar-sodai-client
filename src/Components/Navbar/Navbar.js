@@ -6,15 +6,16 @@
 */
 
 /*  🔥 React Dependencies 🔥 */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Navbar.css";
 import logo from "../../Images/logo.png";
+import menuIcon from "../../Images/menuicon.png";
 
 const Navbar = () => {
   const [user, setUser] = useContext(UserContext);
-  console.log(Boolean(user));
+  const [showMenu, setMenuStatus] = useState(false);
   return (
     <>
       <nav>
@@ -23,7 +24,15 @@ const Navbar = () => {
             <img src={logo} />
           </Link>
         </div>
+        <img className="hamburger" alt="" src={menuIcon} onClick={() => setMenuStatus(!showMenu)} />
         <ol className="menuList">
+          <Link to="/">Home</Link>
+          <Link to="/orders">Orders</Link>
+          <Link to="/admin/addProduct">Admin</Link>
+          {user.name ? <Profile name={user.name} photo={user.photo} /> : <LoginBtn />}
+        </ol>
+
+        <ol className="responsiveNavMenu" style={{ display: showMenu ? "" : "none" }}>
           <Link to="/">Home</Link>
           <Link to="/orders">Orders</Link>
           <Link to="/admin/addProduct">Admin</Link>
